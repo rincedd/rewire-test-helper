@@ -1,0 +1,22 @@
+{
+  "name": "rewire-test-helper",
+  "version": "0.1.0",
+  "description": "Utility to simplify working with rewire in tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rincedd/rewire-test-helper.git"
+  },
+  "keywords": [
+    "rewire"
+  ],
+  "author": "Gerd Zschaler <gzschaler@googlemail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rincedd/rewire-test-helper/issues"
+  },
+  "homepage": "https://github.com/rincedd/rewire-test-helper#readme"
+}
