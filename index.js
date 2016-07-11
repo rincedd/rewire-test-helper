@@ -25,6 +25,13 @@ module.exports.rewire = function(module, autoReset, afterEachHook) {
       return this;
     },
 
+    replaceMap: function(replacementMap) {
+      Object.keys(replacementMap).forEach(function(name) {
+        this.replace(name, replacementMap[name]);
+      });
+      return this;
+    },
+
     reset: function() {
       reset();
       return this;
