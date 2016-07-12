@@ -31,10 +31,19 @@ module.exports.rewire = function(module, autoReset, afterEachHook) {
     return this;
   }
 
+  function replaceList(replacedVariableNames, getReplacementForName) {
+    replacedVariableNames.forEach(function(name) {
+      replace(name, getReplacementForName(name));
+    });
+    return this;
+  }
+
   return {
     replace: replace,
 
     replaceMap: replaceMap,
+
+    replaceList: replaceList,
 
     reset: function() {
       reset();

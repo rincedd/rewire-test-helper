@@ -41,6 +41,18 @@ describe('The rewire test helper', function() {
     expect(module.__Rewire__).to.have.been.calledWith('variable3', 'value3');
   });
 
+  it('should replace variables given by an array of names on replaceList', function() {
+    var replaceList = rewire(module).replaceList;
+
+    replaceList(['variable1', 'variable2', 'variable3'], function(variableName) {
+      return 'replaced ' + variableName;
+    });
+
+    expect(module.__Rewire__).to.have.been.calledWith('variable1', 'replaced variable1');
+    expect(module.__Rewire__).to.have.been.calledWith('variable2', 'replaced variable2');
+    expect(module.__Rewire__).to.have.been.calledWith('variable3', 'replaced variable3');
+  });
+
   it('should reset all replaced variables on reset', function() {
     var rewireApi = rewire(module);
     rewireApi.replace('variable1', 'value1');
