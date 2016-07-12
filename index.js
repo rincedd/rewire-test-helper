@@ -18,20 +18,32 @@ module.exports.rewire = function(module, autoReset, afterEachHook) {
     afterEachHook(reset);
   }
 
-  return {
-    replace: function(name, replacement) {
-      module.__Rewire__(name, replacement);
-      rewiredNames.push(name);
-      return this;
-    },
+  function replace(name, replacement) {
+    module.__Rewire__(name, replacement);
+    rewiredNames.push(name);
+    return this;
+  }
 
-    replaceMap: function(replacementMap) {
-      var that = this;
-      Object.keys(replacementMap).forEach(function(name) {
-        that.replace(name, replacementMap[name]);
-      });
-      return this;
-    },
+  function replaceMap(replacementMap) {
+    Object.keys(replacementMap).forEach(function(name) {
+      replace(name, replacementMap[name]);
+    });
+    return this;
+  }
+
+  function replaceList(replacedVariableNames, getReplacementForName) {
+    replacedVariableNames.forEach(function(name) {
+      replace(name, getReplacementForName(name));
+    });
+    return this;
+  }
+
+  return {
+    replace: replace,
+
+    replaceMap: replaceMap,
+
+    replaceList: replaceList,
 
     reset: function() {
       reset();
