@@ -1,4 +1,6 @@
 # rewire-test-helper
+[![Build Status](https://travis-ci.org/rincedd/rewire-test-helper.svg?branch=master)](https://travis-ci.org/rincedd/rewire-test-helper)
+
 Simplify working with `babel-plugin-rewire`. Automatically reset
 rewired dependencies in your testing framework's `afterEach` hook.
 
