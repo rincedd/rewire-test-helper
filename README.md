@@ -1,6 +1,13 @@
 # rewire-test-helper
 [![Build Status](https://travis-ci.org/rincedd/rewire-test-helper.svg?branch=master)](https://travis-ci.org/rincedd/rewire-test-helper)
 
+---
+
+**DEPRECATED:** Prefer using `__rewire_reset_all__()` provided by `babel-plugin-rewire` 
+since version 1.1.0! This is safer and does not accumulate calls to global afterEach hooks.
+
+---
+
 Simplify working with `babel-plugin-rewire`. Automatically reset
 rewired dependencies in your testing framework's `afterEach` hook.
 

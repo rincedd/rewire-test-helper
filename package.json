@@ -1,7 +1,7 @@
 {
   "name": "rewire-test-helper",
-  "version": "0.3.0",
-  "description": "Utility to simplify working with rewire in tests",
+  "version": "0.3.1",
+  "description": "DEPRECATED Utility to simplify working with rewire in tests",
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
